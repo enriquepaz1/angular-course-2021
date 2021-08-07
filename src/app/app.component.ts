@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'anddgular2021';
+  title: string = 'anddgular2021';
 
   constructor() {
+   
     const testMap = [1, 2, 3, 4, 5, 6].map(item => item * 2);
     console.log(testMap);
     // no devuelve un array el foreach es por eso que dice undefined
@@ -53,6 +54,15 @@ export class AppComponent {
     //acc=0 value=1 100 es valor del acumulador
     const testReduce = [1, 2, 3, 4, 5].reduce((acc, value) => acc + value, 100);
     console.log(testReduce);
+
+    const testEntries = { value: 'ricardo', key: 'RPC' };
+    console.log(Object.entries(testEntries));
+    //[['value','ricardo'],['key','RPC']]
+
+    //nombre del campo [value, key ]
+    const testKey = { value: 'ricardo', key: 'RPC' };
+    console.log(Object.keys(testKey));
+    console.log('ccc', Object.values(testEntries));
 
     const array1 = [1, 2, 3, 4, 5];
     const array2 = [9, 10, 11, ...array1];
