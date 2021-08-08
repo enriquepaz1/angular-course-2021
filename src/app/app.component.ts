@@ -99,5 +99,6 @@ export class AppComponent {
 
     //[1,2,3,4,5,6] filtrar los numeros impares y mostrarlos como cadena
     console.log('aaa=', [1, 2, 3, 4, 5, 6].filter(s => s % 2 !== 0).join(','));
+    SS
   }
 }
