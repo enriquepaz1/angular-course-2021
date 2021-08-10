@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'anddgular2021';
+  myStatus = 'my status';
 
   constructor() {
     const testMap = [1, 2, 3, 4, 5, 6].map(item => item * 2);
@@ -98,5 +99,16 @@ export class AppComponent {
 
     //[1,2,3,4,5,6] filtrar los numeros impares y mostrarlos como cadena
     console.log('aaa=', [1, 2, 3, 4, 5, 6].filter(s => s % 2 !== 0).join(','));
+    
   }
+ printDataEnriqueComp(event:any){
+  console.log('enriqeu comp:', event );
+    
+  }
+  
+ 
+
+
+
+
 }
