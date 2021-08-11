@@ -10,14 +10,35 @@ export class Test2Component implements OnInit {
   @Input () lastName: string;
   @Output () onSendData = new EventEmitter(null);
 
+   myvar1 ='hola'; 
+   
+
   constructor() { }
    
   onShowData(){
-    this.onSendData.emit('general data '+ this.name+ ' '+ this.lastName )
+    this.onSendData.emit('general data '+ this.name+ ' '+ this.lastName);
 
   }
    
   ngOnInit() {
   }
+
+  test0(event){
+   console.log('event click', event);
+   this.myvar1 = 'mundo';
+
+ }
+  test1(event){
+  console.log('event click', event);
+  
+}
+test2(event){
+  console.log('event click', event);
+}
+
+
+
+
+
 
 }

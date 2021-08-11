@@ -1,9 +1,21 @@
-<div style = "border: 5px yellow solid;">
-<p>
-test2 works!
-</p>
-<button (click)="onShowData()">Show data </button>
-<div>
+<div style="border: 5px yellow solid;">
+  <p>
+    test2 works!
+  </p>
+  <button (click)="onShowData()">Show data </button>
+
+  <p>MY VAR 1: {{myvar1}}</p>
+
+  <!--variable banana--->
+  <input type="text" [(ngModel)]="myvar1">
+
+
+
+  <button id="mybutton"
+(click)="test0($event)"
+(blur)="test1($event)"
+(dbclick)="test3($event)"
+>do click events</button>
 
 
 
@@ -14,3 +26,15 @@ test2 works!
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+</div>
