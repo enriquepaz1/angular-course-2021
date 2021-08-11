@@ -10,8 +10,8 @@ export class Test2Component implements OnInit {
   @Input () lastName: string;
   @Output () onSendData = new EventEmitter(null);
 
-   myvar1 ='hola'; 
-   
+   myvar1 =4; 
+   myvar2 =5;
 
   constructor() { }
    
@@ -25,7 +25,7 @@ export class Test2Component implements OnInit {
 
   test0(event){
    console.log('event click', event);
-   this.myvar1 = 'mundo';
+   console.log('suma: ', this.myvar1+this.myvar2); 
 
  }
   test1(event){
