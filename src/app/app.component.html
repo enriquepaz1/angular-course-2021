@@ -85,7 +85,27 @@
   <p>ng container</p>
 </ng-container>
 
+<input type="string" [(ngModel)]="color">
+<p [style.fontSize.px]="color">
+  my p with style 
+</p>
 
+<p [ngStyle]="{
+  'background': color,
+  'border': '5px gray solid'
+}">
+my p with ng style 
+</p>
 
-
+<div [class.est1]="color ==='hola'">
+  my div with class
+ </div>
+ 
+ <div [ngClass]="{
+  'est1':color ==='hola0',  
+   'est2':color ==='hola1',
+    'est3':color ==='hola2'
+ }">
+my div with ng class
+</div>	
 
