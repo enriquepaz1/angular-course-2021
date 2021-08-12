@@ -5,10 +5,12 @@ import {
   AfterViewInit,
   Component,
   DoCheck,
+  EventEmitter,
   Input,
   OnChanges,
   OnDestroy,
-  OnInit
+  OnInit,
+  Output
 } from '@angular/core';
 
 @Component({
@@ -27,8 +29,16 @@ export class Test3Component
     AfterContentInit,
     AfterViewInit {
   @Input() name;
+  myname = 'enrique';
+  mylastName = 'paz';
+
   constructor() {
     console.log('CONSTRUCTOR');
+  }
+
+  testTask(event) {
+    console.log('event click', event);
+    console.log('Datos: ', this.myname + this.mylastName);
   }
 
   ngOnInit() {

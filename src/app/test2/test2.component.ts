@@ -32,9 +32,10 @@ export class Test2Component implements OnInit {
   console.log('event click', event);
   
 }
-test2(event){
-  console.log('event click', event);
+  test3(event){
+  console.log('event double click', event);
 }
+
 
 
 
