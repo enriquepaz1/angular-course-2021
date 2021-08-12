@@ -12,7 +12,7 @@
 
 <p>--------------------------</p>
 <ul>
-   
+
   <span *ngFor="let item of ['first','second']; let i = index;">
     {{item}}{{i}} 
     <enrique-comp 
@@ -20,9 +20,9 @@
     [status]="item" onSendData="printDataEnriqueComp($event)"></enrique-comp>
   </span>
 
- <li>First</li>
- <li>Second</li>
- <li>third</li>
+  <li>First</li>
+  <li>Second</li>
+  <li>third</li>
 
 </ul>
 
@@ -31,81 +31,80 @@
 <input type="text" [(ngModel)]="color">
 <ul [ngSwitch]="color">
   <li *ngSwitchCase="'red'">
-    
+
     <enrique-comp [status]="color" onSendData="printDataEnriqueComp($event)"></enrique-comp>
-    
+
   </li>
 
   <li *ngSwitchCase="'yellow'">yellow</li>
   <app-test3 [name]="color"></app-test3>
   <li *ngSwitchCase="'green'">green</li>
   <li *ngSwitchDefault>Default Orange</li>
- </ul>
+</ul>
 
 
- <button (click)="sw = !sw">SHOW TEST3</button>
+<button (click)="sw = !sw">SHOW TEST3</button>
 
- <div *ngIf="sw else myComp1">
+<div *ngIf="sw else myComp1">
   <app-test3 [name]="myStatus"></app-test3>
 </div>
 
-   <ng-template>
-    <p>it my temlate </p>
-   </ng-template>
+<ng-template>
+  <p>it my temlate </p>
+</ng-template>
 
 
 
 
-  <div #myDiv1>
-    <p>My div 1</p>
-  </div>  
+<div #myDiv1>
+  <p>My div 1</p>
+</div>
 
-  <ng-template #myVarElse>
-    <p>it is my template</p>
-    <p>it is my template</p>
-    <p>it is my template</p>
+<ng-template #myVarElse>
+  <p>it is my template</p>
+  <p>it is my template</p>
+  <p>it is my template</p>
 
-  </ng-template>
-
-
+</ng-template>
 
 
- <app-test2 name='enrique' lastName='paz' 
- 
- (onSendData)="printData($event)">
- <p>My own content </p>
- <p>My own content </p>
- <button>my button </button>
+
+
+<app-test2 name='enrique' lastName='paz' (onSendData)="printData($event)">
+  <p>My own content </p>
+  <p>My own content </p>
+  <button>my button </button>
 
 </app-test2>
 
 
 <button (click)="sw= !sw"> SHOW TEST3</button>
-<ng-container *ngIf="sw" style ="margin: 30px;">
+<ng-container *ngIf="sw" style="margin: 30px;">
   <p>ng container</p>
 </ng-container>
 
 <input type="string" [(ngModel)]="color">
 <p [style.fontSize.px]="color">
-  my p with style 
+  my p with style
 </p>
 
 <p [ngStyle]="{
   'background': color,
   'border': '5px gray solid'
 }">
-my p with ng style 
+  my p with ng style
 </p>
 
 <div [class.est1]="color ==='hola'">
   my div with class
- </div>
- 
- <div [ngClass]="{
+</div>
+
+
+
+<div [ngClass]="{
   'est1':color ==='hola0',  
    'est2':color ==='hola1',
     'est3':color ==='hola2'
  }">
-my div with ng class
-</div>	
-
+  my div with ng class
+</div>
