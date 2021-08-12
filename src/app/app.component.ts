@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title: string = 'anddgular2021';
   myStatus = 'my status';
+  color:string;
 
   sw = true;
   constructor() {

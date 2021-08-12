@@ -13,13 +13,42 @@
 
 <div *ngIf="sw">
   <app-test3 [name]="myStatus"></app-test3>
-
-
-
-
-
-
-
-
-
 </div>
+
+
+
+<p>--------------------------</p>
+<ul>
+   
+  <span *ngFor="let item of ['first','second']; let i = index;">
+    {{item}}{{i}} 
+    <enrique-comp 
+     *ngIf="item !== 'first'"
+    [status]="item" onSendData="printDataEnriqueComp($event)"></enrique-comp>
+  </span>
+
+ <li>First</li>
+ <li>Second</li>
+ <li>third</li>
+
+</ul>
+
+<p>--------------------------</p>
+
+<input type="text" [(ngModel)]="color">
+<ul [ngSwitch]="color">
+  <li *ngSwitchCase="'red'">
+    
+    <enrique-comp [status]="color" onSendData="printDataEnriqueComp($event)"></enrique-comp>
+    
+  </li>
+
+  <li *ngSwitchCase="'yellow'">yellow</li>
+  <app-test3 [name]="color"></app-test3>
+  <li *ngSwitchCase="'green'">green</li>
+  <li *ngSwitchDefault>Default Orange</li>
+ </ul>
+
+
+
+
