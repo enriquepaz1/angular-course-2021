@@ -9,13 +9,6 @@
 <input type="text" [(ngModel)]="myStatus">
 <!--  <app-test3 [name]="myStatus"></app-test3>   -->
 
-<button (click)="sw = !sw">SHOW TEST3</button>
-
-<div *ngIf="sw">
-  <app-test3 [name]="myStatus"></app-test3>
-</div>
-
-
 
 <p>--------------------------</p>
 <ul>
@@ -48,6 +41,50 @@
   <li *ngSwitchCase="'green'">green</li>
   <li *ngSwitchDefault>Default Orange</li>
  </ul>
+
+
+ <button (click)="sw = !sw">SHOW TEST3</button>
+
+ <div *ngIf="sw else myComp1">
+  <app-test3 [name]="myStatus"></app-test3>
+</div>
+
+   <ng-template>
+    <p>it my temlate </p>
+   </ng-template>
+
+
+
+
+  <div #myDiv1>
+    <p>My div 1</p>
+  </div>  
+
+  <ng-template #myVarElse>
+    <p>it is my template</p>
+    <p>it is my template</p>
+    <p>it is my template</p>
+
+  </ng-template>
+
+
+
+
+ <app-test2 name='enrique' lastName='paz' 
+ 
+ (onSendData)="printData($event)">
+ <p>My own content </p>
+ <p>My own content </p>
+ <button>my button </button>
+
+</app-test2>
+
+
+<button (click)="sw= !sw"> SHOW TEST3</button>
+<ng-container *ngIf="sw" style ="margin: 30px;">
+  <p>ng container</p>
+</ng-container>
+
 
 
 
