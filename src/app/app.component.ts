@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BehaviorSubject, of, Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
@@ -12,6 +12,8 @@ export class AppComponent {
   myStatus = 'my status';
   color: string;
 
+   @Input()name1:string='juan';
+   @Input()lastName1:string='gutierrez';
   sw = true;
   personASub: Subscription;
   video = 1;

@@ -5,10 +5,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './test1.component.html',
   styleUrls: ['./test1.component.css']
 })
+
+
 export class Test1Component implements OnInit {
   @Input('status') statusTest: string = 'working';
   @Output('onSendData') sendData = new EventEmitter(null);
-
+   
   constructor() {}
 
   ngOnInit() {}
