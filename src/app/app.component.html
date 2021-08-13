@@ -120,3 +120,21 @@
  }">
   my div with ng class
 </div>
+
+
+<input type="number" [(ngModel)]="varColor">
+
+<p>*********</p>
+<div [ngClass]="{
+  'est1':varColor%2 == 0,
+  'est2':varColor%2 == 1
+}">
+</div>
+<p>***********</p>
+
+
+
+
+
+
+
