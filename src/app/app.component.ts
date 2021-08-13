@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import {of} from 'rxjs';
+import { BehaviorSubject, of, Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-
 
 @Component({
   selector: 'app-root',
@@ -11,33 +10,26 @@ import { filter, map } from 'rxjs/operators';
 export class AppComponent {
   title: string = 'anddgular2021';
   myStatus = 'my status';
-  color:string;
+  color: string;
 
   sw = true;
-  tictock= of([1,2,3,4,5]);
+  personASub: Subscription;
+  video = 1;
+  tictock = new BehaviorSubject(this.video);
   constructor() {
-
     //persona A
-    this.tictock.pipe(
-      map(s=>s.join('')),
-      map(s=>s+'hola'),
-
-    ).subscribe(v=>{
-    console.log('VIDEO A ',v);
+    this.tictock.pipe(filter(s => s % 2 === 0)).subscribe(v => {
+      console.log('VIDEO A ', v);
     });
     //persona B
-    this.tictock.pipe(
-        filter((v:any)=>v[0]%2==1)
+    this.tictock.subscribe(v => {
+      console.log('VIDEO B', v);
+    });
+    //persona C
+    this.tictock.subscribe(v => {
+      console.log('VIDEO C', v);
+    });
 
-    ).subscribe(v=>{
-      console.log('VIDEO B',v);
-      });
-     //persona C
-      this.tictock.subscribe(v=>{
-        console.log('VIDEO C',v);
-        });
-      
-     
     const testMap = [1, 2, 3, 4, 5, 6].map(item => item * 2);
     console.log(testMap);
     // no devuelve un array el foreach es por eso que dice undefined
@@ -136,10 +128,12 @@ export class AppComponent {
     console.log('CHILD COMP SEND DATA: ', event);
   }
 
-  onAddVideo(){
-   
+  onAddVideo() {
+    this.video++;
+    this.tictock.next(this.video);
   }
-
-
+  personUnsubscribe() {
+    this.personASub.unsubscribe();
+    console.log('PERSONA A SE DESUSCRIBE');
+  }
 }
-
