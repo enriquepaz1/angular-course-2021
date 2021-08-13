@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {of} from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-root',
@@ -11,7 +14,30 @@ export class AppComponent {
   color:string;
 
   sw = true;
+  tictock= of([1,2,3,4,5]);
   constructor() {
+
+    //persona A
+    this.tictock.pipe(
+      map(s=>s.join('')),
+      map(s=>s+'hola'),
+
+    ).subscribe(v=>{
+    console.log('VIDEO A ',v);
+    });
+    //persona B
+    this.tictock.pipe(
+        filter((v:any)=>v[0]%2==1)
+
+    ).subscribe(v=>{
+      console.log('VIDEO B',v);
+      });
+     //persona C
+      this.tictock.subscribe(v=>{
+        console.log('VIDEO C',v);
+        });
+      
+     
     const testMap = [1, 2, 3, 4, 5, 6].map(item => item * 2);
     console.log(testMap);
     // no devuelve un array el foreach es por eso que dice undefined
@@ -109,4 +135,11 @@ export class AppComponent {
   printData(event) {
     console.log('CHILD COMP SEND DATA: ', event);
   }
+
+  onAddVideo(){
+   
+  }
+
+
 }
+
