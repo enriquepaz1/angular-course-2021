@@ -34,4 +34,13 @@ export class Directive1Directive {
 
   this.element.nativeElement.style.backgroundColor = color1;
   }
+  
+
+  ngOnchanges(changes:any){
+    this.setBackgroundColor(changes.directiveTest1.currentValue)
+  }
+
+
+
+
 }
