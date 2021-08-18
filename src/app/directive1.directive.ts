@@ -3,7 +3,7 @@ import { Directive, ElementRef, EventEmitter, HostListener, Input, OnChanges, Ou
 @Directive({
   selector: '[directiveTest1]'
 })
-export class Directive1Directive implements OnChanges {
+export class Directive1Directive implements OnChanges{
 
   @Input() directiveTest1:string='yellow';
   @Output() outputTest = new  EventEmitter<any>(null);

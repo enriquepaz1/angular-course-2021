@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { BehaviorSubject, of, Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
@@ -18,6 +18,13 @@ export class AppComponent {
   personASub: Subscription;
   video = 1;
   tictock = new BehaviorSubject(this.video);
+
+
+  @ViewChild('Div1') Div1: ElementRef;
+  @ViewChild('Div2') Div2: ElementRef;
+  @ViewChild('myCompEnrique') myCompEnrique: any;
+
+
   constructor() {
     //persona A
     this.tictock.pipe(filter(s => s % 2 === 0)).subscribe(v => {
@@ -143,6 +150,14 @@ test(event){
  console.log('AAA',event);
 
 }
+
+  onShowLocalVars(){
+    console.log(this.Div1, this.Div2, this.myCompEnrique);
+    this.myCompEnrique.onClickTest();
+    this.Div2.nativeElement.value='enrique';
+
+  }
+
 
 
 
