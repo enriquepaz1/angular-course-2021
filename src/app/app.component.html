@@ -156,3 +156,29 @@ class="est1"
   <button (click)=onShowLocalVars()>show local vars</button>
 
   <enrique-comp #myCompEnrique></enrique-comp>
+
+
+
+
+
+
+
+  <input type="number" [(ngModel)]= "myColor">
+
+<div [style.border]="'5px solid '+ myColor">
+  assx
+</div>
+
+<ul>
+  <li *ngFor="let color of [myColor]">
+
+
+    <div [ngClass]="{
+'est1':myColor%2===0, 
+'est2':myColor%2===1
+
+}">
+      texto
+    </div>
+  </li>
+</ul>

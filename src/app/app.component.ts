@@ -11,6 +11,7 @@ export class AppComponent {
   title: string = 'anddgular2021';
   myStatus = 'my status';
   color: string;
+  myColor:string;
 
    @Input()name1:string='juan';
    @Input()lastName1:string='gutierrez';
