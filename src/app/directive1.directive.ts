@@ -1,9 +1,9 @@
-import { Directive, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, Input, OnChanges, Output } from '@angular/core';
 
 @Directive({
   selector: '[directiveTest1]'
 })
-export class Directive1Directive {
+export class Directive1Directive implements OnChanges {
 
   @Input() directiveTest1:string='yellow';
   @Output() outputTest = new  EventEmitter<any>(null);

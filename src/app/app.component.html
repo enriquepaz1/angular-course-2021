@@ -132,10 +132,21 @@
 </div>
 <p>***********</p>
 
+<input type="text" [(ngModel)]="color">
 
-<p directiveTest1 [directiveTest1]="'red'" (outputTest)="test($event)">Mi primera directiva</p>
+<p directiveTest1 [directiveTest1]="color" 
+(outputTest)="test($event)">Mi primera directiva</p>
 
 <input type="checkbox"[(ngModel)]="sw">ngifEnrique
 <div *ngifEnrique="sw" (test)="test($event)">
   <p>my directive structural</p>
 </div>
+
+
+
+
+
+
+
+
+
