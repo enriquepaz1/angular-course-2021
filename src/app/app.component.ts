@@ -153,7 +153,9 @@ test(event){
 
   onShowLocalVars(){
     console.log(this.Div1, this.Div2, this.myCompEnrique);
+    this.Div1.nativeElement.style.background = 'green';
     this.myCompEnrique.onClickTest();
+    console.log(this.Div1, this.Div2, this.myCompEnrique);
     this.Div2.nativeElement.value='enrique';
 
   }
