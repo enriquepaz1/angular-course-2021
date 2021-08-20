@@ -1,23 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
+ 
+
   selector: 'app-admin2',
   template: `
     <p class="hola">
       admin2 works!
     </p>
+    <p>{{test2 ?? test3}}</p>
+    <p>{{test2 || 'cscxcxc'}}</p>
+    
+    <button (click)="testParams('dkmsd')">test</button>
   `,
 
-  style: [
-    `
-  .hola{
-  background-color: yellow;
-    color: red;
+  style:
+  [`
+    .hola{
+     background-color: yellow;
+      color: red;
      }
-   `
-  ]
+   `]
+  
 })
 export class Admin2Component implements OnInit {
+  test2 = null;
+  test3= 'maria';
+
+
   constructor() {}
 
   ngOnInit() {}
@@ -30,8 +40,10 @@ export class Admin2Component implements OnInit {
    *
    */
 
-  public testParams(name: string, lastName: string): string {
-    console.log(name + '' + lastName);
+  public testParams(name: string, lastName?: string='gutierrez'): string {
+    const aux='juan';
+
+    console.log((name ?? aux) + '' + lastName);
     return name + '' + lastName;
   }
 }

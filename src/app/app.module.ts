@@ -12,7 +12,6 @@ import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test2/test2.component';
 import { Test3Component } from './test3/test3.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,15 +21,8 @@ import { Test3Component } from './test3/test3.component';
     Directive1Directive,
     Directive2Directive
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HomeModule,
-    AdminModule,
-    BuyModule
-
-  ],
+  imports: [BrowserModule, FormsModule, HomeModule, AdminModule, BuyModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
