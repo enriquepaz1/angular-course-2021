@@ -18,7 +18,7 @@ import { Component, OnInit } from '@angular/core';
   [`
     .hola{
      background-color: yellow;
-      color: red;
+      color:red;
      }
    `]
   
