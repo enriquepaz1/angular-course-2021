@@ -11,20 +11,18 @@ export class AppComponent {
   title: string = 'anddgular2021';
   myStatus = 'my status';
   color: string;
-  myColor:string;
+  myColor: string;
 
-   @Input()name1:string='juan';
-   @Input()lastName1:string='gutierrez';
+  @Input() name1: string = 'juan';
+  @Input() lastName1: string = 'gutierrez';
   sw = true;
   personASub: Subscription;
   video = 1;
   tictock = new BehaviorSubject(this.video);
 
-
   @ViewChild('Div1') Div1: ElementRef;
   @ViewChild('Div2') Div2: ElementRef;
   @ViewChild('myCompEnrique') myCompEnrique: any;
-
 
   constructor() {
     //persona A
@@ -147,26 +145,15 @@ export class AppComponent {
     console.log('PERSONA A SE DESUSCRIBE');
   }
 
-test(event){
- console.log('AAA',event);
+  test(event) {
+    console.log('AAA', event);
+  }
 
+  onShowLocalVars() {
+    console.log(this.Div1, this.Div2, this.myCompEnrique);
+    this.Div1.nativeElement.className = 'est2';
+    this.myCompEnrique.onClickTest();
+    console.log(this.Div1, this.Div2, this.myCompEnrique);
+    this.Div2.nativeElement.value = 'enrique';
+  }
 }
-
- 
-
-onShowLocalVars(){
-  console.log(this.Div1, this.Div2, this.myCompEnrique);
-  this.Div1.nativeElement.className= 'est2';
-  this.myCompEnrique.onClickTest();
-  console.log(this.Div1, this.Div2, this.myCompEnrique);
-  this.Div2.nativeElement.value='enrique';
-
-}
-
-
-
-
-}
-
-
-

@@ -14,13 +14,14 @@ import { Component, OnInit } from '@angular/core';
     <button (click)="testParams('dkmsd')">test</button>
   `,
 
-  style:
-  [`
+  styles:[
+    `
     .hola{
      background-color: yellow;
       color:red;
      }
-   `]
+   `
+  ]
   
 })
 export class Admin2Component implements OnInit {
