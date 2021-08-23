@@ -3,8 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
 import { Directive1Directive } from './directive1.directive';
 import { Directive2Directive } from './directive2.directive';
+import { LayoutModule } from './layout/layout.module';
 import { AdminModule } from './pages/admin/admin.module';
 import { BuyModule } from './pages/buy/buy.module';
 import { HomeModule } from './pages/home/home.module';
@@ -21,7 +23,7 @@ import { Test3Component } from './test3/test3.component';
     Directive1Directive,
     Directive2Directive
   ],
-  imports: [BrowserModule, FormsModule, HomeModule, AdminModule, BuyModule],
+  imports: [BrowserModule, FormsModule, HomeModule, AdminModule, BuyModule,CoreModule,LayoutModule],
   providers: [],
   bootstrap: [AppComponent]
 })
