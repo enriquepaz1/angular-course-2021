@@ -1,7 +1,12 @@
 <p>App component </p>
 
-<div>
 
+<p *ngIf="verificarVacunados()">
+  TODOS VACUNADOS
+</p>
+
+
+<div>
 <p>VACUNAS</p>
 <p>VACCINATED:{{personas.vacunados.length}}</p>
 <p>NOT VACCINATED:{{personas.noVacunados.length}}</p>

@@ -32,6 +32,13 @@ export class AppComponent {
 
     };
 
+    verificarVacunados(){
+      const enf=this.personas.vacunados.filter(p=>p.disease=true)
+      const noEnf=this.personas.noVacunados.filter(p=>p.disease=false)
+       return (enf.length+noEnf.length===0);     
+  
+    } 
+
   vacunar(person,tipo){
 
   }
