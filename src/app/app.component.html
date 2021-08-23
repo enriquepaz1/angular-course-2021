@@ -1,5 +1,48 @@
 <p>App component </p>
 
+<div>
 
+<p>VACUNAS</p>
+<p>VACCINATED:{{personas.vacunados.length}}</p>
+<p>NOT VACCINATED:{{personas.noVacunados.length}}</p>
+
+
+<p>VACCINATED</p>
+<div style="display: flex; flexDirection: row;">
+  <div *ngFor="let person of personas.vacunados">
+    <app-person
+      [name]= "person.name"
+      [age]="person.age"
+      [date]="person.date"
+      [disease]="person.disease"
+      [vaccineType]="person.vaccineType"
+      [vaccined]="person.vaccined"
+      [doses]="person.doses"
+      (vacunar)="vacunar(person,'vacunados')">
+
+    </app-person>
+
+  </div>
+  </div>
+
+
+<p>NOT VACCINATED</p>
+<div style="display: flex; flexDirection: row;">
+  <div *ngFor="let person of personas.noVacunados">
+
+<app-person
+  [name]= "person.nombre"
+  [age]="person.age"
+  [date]="person.date"
+  [disease]="person.disease"
+  [vaccineType]="person.vaccineType"
+  [vaccined]="person.vaccined"
+  [doses]="person.doses"
+  (vacunar)="vacunar(person,'noVacunados')">
+</app-person>
+
+  </div>
+</div>    
+</div>
 
 
