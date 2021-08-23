@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
     </p>
     <p>{{test2 ?? test3}}</p>
     <p>{{test2 || 'cscxcxc'}}</p>
-    
+    <p>{{testA ?? 'No existe'}}</p>  
     <button (click)="testParams('dkmsd')">test</button>
   `,
 
@@ -27,6 +27,18 @@ import { Component, OnInit } from '@angular/core';
 export class Admin2Component implements OnInit {
   test2 = null;
   test3= 'maria';
+
+
+  testA=0
+  testB=0
+  testC="n/a"
+
+   test=[
+    {name:"a", status: 0},
+    {name: "b", status: 0},
+    {name: "c", status: null}
+
+   ]
 
 
   constructor() {}
