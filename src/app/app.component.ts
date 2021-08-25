@@ -2,6 +2,7 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { BehaviorSubject, of, Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -109,15 +110,14 @@ export class AppComponent {
   };
 
   verificarVacunados() {
-    const enf = this.personas.vacunados.filter(p => (p.disease = true));
-    const noEnf = this.personas.noVacunados.filter(p => (p.disease = false));
-    return enf.length + noEnf.length === 0;
+    const noEnf = this.personas.noVacunados.filter(p => (p.age>18));
+    return  noEnf.length === 0;
   }
 
-  //vacunar(person,status){
-  //const estado= this.personas[status].findIndex(p=>p===person);
-  //this.personas[status].splice(estado,1);
-  //this.personas.vacunados.push({...estado,vacunado:true});
+  vacunar(person,tipo:any){
+  const index = this.personas[tipo].findIndex(p=> p === person);
+   this.personas[tipo].splice(index,1);
+   this.personas.vacunados.push({...person,vaccined:true});
 
-  //}
+  }
 }

@@ -9,13 +9,15 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
     >
       <p>Name:{{ name | uppercase }}</p>
       <p>Age:{{ age }}</p>
-      <p>Date:{{ date }}</p>
-      <p>Disease:{{ disease }}</p>
+      <p>Date:{{ date ? '07/09/2019': ''}}</p>
+      <p>Disease:{{ disease ? 'Yes': 'No' }}</p>
       <p>VaccineType:{{ vaccineType }}</p>
-      <p>Vaccined:{{ vaccined }}</p>
+      <p>Vaccined:{{ vaccined ? 'Yes': 'No'}}</p>
       <p>Doses:{{ doses }}</p>
 
-      <button *ngIf="!vaccined" (click)="onVacunar()" [disabled]="age < 18">
+      <button *ngIf="!vaccined" (click)="onVacunar()" [disabled]="
+      
+         age<18 ">
         Vacunar
       </button>
     </div>
