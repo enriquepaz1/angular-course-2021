@@ -7,4 +7,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular2021';
+
+  constructor() {
+    this.pure(2, 3);
+    this.pure(5, 4);
+    this.pure(3, 4);
+
+    this.impure(2, 3);
+    this.impure(5, 4);
+    this.impure(3, 4);
+  }
+
+  pure(a: number, b: number) {
+    console.log(a + b);
+    return a + b;
+  }
+
+  impure(a: number, b: number) {
+    const aux = Math.random();
+    console.log(a + b + aux);
+    return a + b + aux;
+  }
 }
