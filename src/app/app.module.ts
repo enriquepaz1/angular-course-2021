@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ImpurePipe } from './pipes/impure.pipe';
 import { PurePipe } from './pipes/pure.pipe';
 import { View1Component } from './view1/view1.component';
+import { View1sub1Component } from './view1/view1sub1/view1sub1.component';
+import { View1sub2Component } from './view1/view1sub2/view1sub2.component';
 import { View2Component } from './view2/view2.component';
 
 
@@ -41,7 +43,8 @@ path: 'view1',component: View1Component
 
 @NgModule({
   declarations: [
-    AppComponent,ImpurePipe,PurePipe,View1Component,View2Component
+    AppComponent,ImpurePipe,PurePipe,View1Component,View1sub1Component,
+    View1sub2Component,View2Component
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(routes)
