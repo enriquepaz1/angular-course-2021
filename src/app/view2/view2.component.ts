@@ -11,11 +11,16 @@ export class View2Component implements OnInit {
   constructor(private router: ActivatedRoute) { }
 
   ngOnInit():void {
-   /*this.router.params.subscribe(p=>{
+   this.router.params.subscribe(p=>{
      console.log('PARMAS:', p);
    });
-*/
- console.log ('SNAPSHOT:', this.router.snapshot.par)
+
+   this.router.queryParams.subscribe(q=>{
+     console.log('QUERY PARAMS:',q);
+     console.log('SNAPSHOT:', this.router.snapshot.queryParams)
+
+   })
+// console.log ('SNAPSHOT:', this.router.snapshot.params)
 
 
 

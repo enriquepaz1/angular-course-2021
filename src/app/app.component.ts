@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import routerPreserveQueryParams from '@angular/core/schematics/migrations/router-preserve-query-params';
 import { Router } from '@angular/router';
 
 @Component({
@@ -36,9 +37,11 @@ export class AppComponent {
 
 
   onGoView2FromTS():void{
-  this.router.navigate(['view2',this.id,'sub',3333])
+  this.router.navigate(['view2',this.id,'sub',3333]),
+   {queryParams: {name:'enrique', lastName:'Paz'}}  
 
-  }
+
+}
   
   
   
