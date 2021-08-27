@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular2021';
-
+  data=[1,2,3,4,5,6,7,8,9];
+  
   constructor() {
     this.pure(2, 3);
     this.pure(5, 4);
