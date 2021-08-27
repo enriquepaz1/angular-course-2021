@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
+
+  id: number = 3;
   title = 'angular2021';
   data=[1,2,3,4,5,6,7,8,9];
   
-  constructor() {
+  constructor(private router:Router) {
     this.pure(2, 3);
     this.pure(5, 4);
     this.pure(3, 4);
@@ -29,4 +33,22 @@ export class AppComponent {
     console.log(a + b + aux);
     return a + b + aux;
   }
+
+
+  onGoView2FromTS():void{
+  this.router.navigate(['view2',this.id,'sub',3333])
+
+  }
+  
+  
+  
+
+
+
+
+
+
+
+
+
 }
