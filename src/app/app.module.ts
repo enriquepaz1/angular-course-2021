@@ -25,29 +25,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
 
-  {
-    path: 'home',
-    component: HomeComponent,
-    children: [
-      {
-        path: 'home1',
-        component: Home1Component
-      },
-      { path: 'home2', component: Home2Component }
-    ]
-  },
-
-  {
-    path: 'admi',
-    component: AdminComponent,
-    children: [
-      { path: 'admi1', component: Admi1Component },
-      {
-        path: 'admi2',
-        component: Admi2Component
-      }
-    ]
-  },
 
   {
     path: 'view1',
@@ -88,13 +65,7 @@ const routes: Routes = [
     View1Component,
     View1sub1Component,
     View1sub2Component,
-    View2Component,
-    HomeComponent,
-    AdminComponent,
-    Admi1Component,
-    Admi2Component,
-    Home1Component,
-    Home2Component
+    View2Component
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],

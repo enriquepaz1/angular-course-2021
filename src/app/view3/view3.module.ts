@@ -11,7 +11,7 @@ const routes: Routes = [
     component: View3sub1Component,
     children: [
       {
-        path: 'view3sub1',
+        path: 'view3sub2',
         component: View3sub2Component
       }
     ]

@@ -7,24 +7,18 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./view2.component.css']
 })
 export class View2Component implements OnInit {
+  constructor(private router: ActivatedRoute) {}
 
-  constructor(private router: ActivatedRoute) { }
+  ngOnInit(): void {
+    this.router.params.subscribe(p => {
+      console.log('PARAMS', p);
+    });
 
-  ngOnInit():void {
-   this.router.params.subscribe(p=>{
-     console.log('PARMAS:', p);
-   });
+    this.router.queryParams.subscribe(q => {
+      console.log('QUERY PARAMS', q);
+    });
 
-   this.router.queryParams.subscribe(q=>{
-     console.log('QUERY PARAMS:',q);
-     console.log('SNAPSHOT:', this.router.snapshot.queryParams)
-
-   })
-// console.log ('SNAPSHOT:', this.router.snapshot.params)
-
-
-
-
+    console.log('SNAPSHOT:', this.router.snapshot.params);
+    console.log('SNAPSHOT', this.router.snapshot.queryParams);
   }
-
 }

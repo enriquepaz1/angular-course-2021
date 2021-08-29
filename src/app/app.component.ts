@@ -37,21 +37,9 @@ export class AppComponent {
 
 
   onGoView2FromTS():void{
-  this.router.navigate(['view2',this.id,'sub',3333]),
-   {queryParams: {name:'enrique', lastName:'Paz'}}  
-
-
-}
+  this.router.navigate(['view2',this.id, 'sub', 3333]),
+   {queryParams: {name:'enrique', lastName:'paz'}}
+  }
   
-  
-  
-
-
-
-
-
-
-
-
 
 }
