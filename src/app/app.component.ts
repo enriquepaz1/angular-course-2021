@@ -4,8 +4,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
 
 export class AppComponent {
@@ -20,6 +19,9 @@ export class AppComponent {
     this.pure(3, 4);
 
     this.impure(2, 3);
+
+
+
     this.impure(5, 4);
     this.impure(3, 4);
   }

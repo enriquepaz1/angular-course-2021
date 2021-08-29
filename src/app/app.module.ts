@@ -19,6 +19,18 @@ import { View3sub1Component } from './view3/view3sub1/view3sub1.component';
 import { View3sub2Component } from './view3/view3sub2/view3sub2.component';
 
 const routes: Routes = [
+{path:'',redirectTo:'login', pathMatch:'full'},
+
+{path:'login', loadChildren:
+()=> import('./login/login.module').then(m=>m.LoginModule)
+},
+
+{path:'pages', loadChildren:
+()=> import('./pages/pages.module').then(m=>m.PagesModule)
+}
+
+
+/*
   {
     path: '',
     redirectTo: 'view1',
@@ -55,6 +67,9 @@ const routes: Routes = [
     path: 'view3',
     loadChildren: () => import('./view3/view3.module').then(m => m.View3Module)
   }
+
+*/
+
 ];
 
 @NgModule({
