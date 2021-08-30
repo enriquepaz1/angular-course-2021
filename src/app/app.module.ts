@@ -1,14 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { Admi1Component } from './admin/admi1/admi1.component';
-import { Admi2Component } from './admin/admi2/admi2.component';
-import { AdminComponent } from './admin/admin.component';
-
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { Home1Component } from './home/home1/home1.component';
-import { Home2Component } from './home/home2/home2.component';
 import { ImpurePipe } from './pipes/impure.pipe';
 import { PurePipe } from './pipes/pure.pipe';
 import { View1Component } from './view1/view1.component';
