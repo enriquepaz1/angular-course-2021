@@ -16,6 +16,10 @@ const routes:Routes=[
     RouterModule.forChild(routes)
 
   ],
-  declarations: [HomeComponent]
+  declarations: [HomeComponent],
+  providers:[
+
+  ]
+
 })
 export class HomeModule { }
