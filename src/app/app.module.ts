@@ -10,6 +10,7 @@ import { View1sub2Component } from './view1/view1sub2/view1sub2.component';
 import { View2Component } from './view2/view2.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { View3sub2Component } from './view3/view3sub2/view3sub2.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
 {path:'',redirectTo:'login', pathMatch:'full'},
@@ -75,7 +76,7 @@ const routes: Routes = [
     View1sub2Component,
     View2Component
   ],
-  imports: [BrowserModule, BrowserAnimationsModule,  RouterModule.forRoot(routes)
+  imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule,RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
