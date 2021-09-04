@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 @Injectable()
 export class PublicationService {
 
- url=environment.app.apiBaseUrl;
+ url = environment.app.apiBaseUrl;
 
   constructor(private http: HttpClient) { }
 
