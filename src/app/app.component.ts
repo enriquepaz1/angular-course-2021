@@ -9,7 +9,7 @@ import { VacunasService } from './vacunas.service';
 })
 export class AppComponent {
   title = 'angular2021';
-  vacunadosArray: VACCINATED[] = [
+  vacunadosArray: Vaccinates[] = [
     {
       age: 23,
       date: '2020-12-03T18:30:00.000Z',
@@ -106,21 +106,23 @@ export class AppComponent {
   constructor(private vacunasService: VacunasService) {}
   ngOnInit(): void {
     this.vacunasService.getAllVacunados().subscribe(res => {
-      console.log('Response', res);
+      console.log('Response', Object.entries(res));
     });
 
     this.vacunasService.getAllNoVacunados().subscribe(res => {
-      console.log('Response', res);
+      console.log('Response', Object.entries(res));
     });
   }
 
   personasVacunadas = {
     vacunados: this.vacunadosArray.filter(p => p.vaccined === 1),
-    noVacunados: this.vacunadosArray.filter(p => p.vaccined === )
+    noVacunados: this.vacunadosArray.filter(p => p.vaccined === 0)
   };
 
   verificarVacunados() {
-    const noEnf = this.personasVacunadas.noVacunados.filter(p => p.age > 18);
-    return noEnf.length === 0;
+    const verificar = this.personasVacunadas.noVacunados.filter(
+      p => p.age > 18
+    );
+    return verificar.length === 0;
   }
 }
