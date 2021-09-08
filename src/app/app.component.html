@@ -1,0 +1,34 @@
+<p *ngIf="verificarVacunados()" >
+EVERYBODY VACCINATED
+</p>
+
+<div>
+<p>VACCINES</p>
+<p>VACCINATED:{{personasVacunadas.vacunados.length}}</p>
+<p>NOT VACCINATED:{{personasVacunadas.noVacunados.length}}</p>
+
+
+<p>VACCINATED</p>
+<div style="display: flex; flexDirection: row;">
+  <div *ngFor="let person of personasVacunadas.vacunados">
+    <app-personas [name]="person.name" [age]="person.age" [date]="person.date" [disease]="person.disease"
+      [vaccineType]="person.vaccineType" [vaccined]="person.vaccined" [doses]="person.doses"
+      (vacunar)="vacunar(person,'vacunados')">
+
+    </app-personas>
+
+  </div>
+</div>
+
+
+<p>NOT VACCINATED</p>
+<div style="display: flex; flexDirection: row;">
+  <div *ngFor="let person of personasVacunadas.noVacunados">
+    <app-personas [name]="person.name" [age]="person.age" [date]="person.date" [disease]="person.disease"
+      [vaccineType]="person.vaccineType" [vaccined]="person.vaccined" [doses]="person.doses"
+      (vacunar)="vacunar(person,'noVacunados')">
+    </app-personas>
+
+  </div>
+</div>
+</div>

@@ -8,27 +8,50 @@ export class VacunasService {
 
   constructor(private http:HttpClient) { }
 
-   public getAll():Observable <any>{
+   public getAllVacunados():Observable <any>{
      return this.http.get(
       `https://vaccines-test-default-rtdb.firebaseio.com/vaccinated.json`
       
      );
    }
+
+   public getAllNoVacunados():Observable <any>{
+    return this.http.get(
+     `https://vaccines-test-default-rtdb.firebaseio.com/unvaccinated.json`
+     
+    );
+  }
    
-   public create(body:any):Observable<any>{
+   public createVacunados(body:any):Observable<any>{
          return this.http.post(
-          `https://vaccines-test-default-rtdb.firebaseio.com/vaccinated.json`
+          `https://vaccines-test-default-rtdb.firebaseio.com/vaccinated.json`,body
          );
    }
 
-  //public update(id: string, body:any)Observable<any>{
-    //return this.http.put(
-      //`https://vaccines-test-default-rtdb.firebaseio.com/vaccinated.jsonvacci//nated/{id}.json`)
- // }
-   
-  public delete (id: string):Observable<any>{
+   public createNoVacunados(body:any):Observable<any>{
+    return this.http.post(
+     `https://vaccines-test-default-rtdb.firebaseio.com/unvaccinated.json`,body
+    );
+}
+
+  public updateVacunados(id: string, body:any):Observable<any>{
+    return this.http.put(
+      `https://vaccines-test-default-rtdb.firebaseio.com/vaccinated/{id}.json`,body)
+    }
+
+   public updateNoVacunados(id: string, body:any):Observable<any>{
+    return this.http.put(
+      `https://vaccines-test-default-rtdb.firebaseio.com/unvaccinated/{id}.json`,body)
+  }
+
+  public deleteVacunados (id: string):Observable<any>{
     return this.http.delete(
-      `https://vaccines-test-default-rtdb.firebaseio.com/vaccinated.jsonvaccinated/{id}.json`
+      `https://vaccines-test-default-rtdb.firebaseio.com/vaccinated/{id}.json`
+    )
+  }
+  public deleteNoVacunados (id: string):Observable<any>{
+    return this.http.delete(
+      `https://vaccines-test-default-rtdb.firebaseio.com/unvaccinated/{id}.json`
     )
   }
 
