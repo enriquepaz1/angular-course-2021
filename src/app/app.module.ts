@@ -13,6 +13,12 @@ const routes: Routes = [
     path: 'jurados',
     loadChildren: () =>
       import('./jurados/jurados.module').then(m => m.JuradosModule)
+  },
+
+  {
+    path: 'votacion',
+    loadChildren: () =>
+      import('./votacion/votacion.module').then(m => m.VotacionModule)
   }
 ];
 
