@@ -9,8 +9,8 @@ import { VacunasService } from './vacunas.service';
 })
 export class AppComponent {
   title = 'angular2021';
-  vacArray: any[] = [];
-  noVacArray: any[] = [];
+  vacArray: [] = [];
+  noVacArray: [] = [];
   vacunadosArray: Vaccinates[] = [];
 
   constructor(private vacunasService: VacunasService) {}
@@ -27,39 +27,33 @@ export class AppComponent {
     this.getNoVacunados();
   }
 
-  personasVacunadas = {
-    vacunados: this.vacunadosArray.filter(p => p.vaccined === 1),
-    noVacunados: this.vacunadosArray.filter(p => p.vaccined === 0)
-  };
+  // personasVacunadas = {
+  //vacunados: this.vacunadosArray.filter(p => p.vaccined === 1),
+  //noVacunados: this.vacunadosArray.filter(p => p.vaccined === 0)
+  //};
 
   getVacunados(): void {
-    this.vacunasService
-      .getAllVacunados()
-      .subscribe(
-        res =>
-          (this.vacArray = Object.entries(res).map((m: any) => ({
-            id: m[0],
-            ...m[1]
-          })))
-      );
+    this.vacunasService.getAllVacunados().subscribe(
+      res =>
+        (this.vacArray = Object.entries(res).map((m: any) => ({
+          id: m[0],
+          ...m[1]
+        })))
+    );
   }
 
   getNoVacunados(): void {
-    this.vacunasService
-      .getAllNoVacunados()
-      .subscribe(
-        res =>
-          (this.noVacArray = Object.entries(res).map((m: any) => ({
-            id: m[0],
-            ...m[1]
-          })))
-      );
+    this.vacunasService.getAllNoVacunados().subscribe(
+      res =>
+        (this.noVacArray = Object.entries(res).map((m: any) => ({
+          id: m[0],
+          ...m[1]
+        })))
+    );
   }
 
   verificarVacunados() {
-    const verificar = this.personasVacunadas.noVacunados.filter(
-      p => p.age > 18
-    );
+    const verificar = this.noVacArray.filter(p => p.age > 18);
     return verificar.length === 0;
   }
 }
