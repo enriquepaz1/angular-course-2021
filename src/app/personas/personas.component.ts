@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
     >
       <p>Name:{{ name | uppercase }}</p>
       <p>Age:{{ age }}</p>
-      <p>Date:{{ date ? '31/12/2021' : '' }}</p>
+      <p>Date:{{ date | date: 'dd/MM/yyyy' : '' }}</p>
       <p>Disease:{{ disease ? 'Yes' : 'No' }}</p>
       <p>VaccineType:{{ vaccineType }}</p>
       <p>Vaccined:{{ vaccined ? 'Yes' : 'No' }}</p>

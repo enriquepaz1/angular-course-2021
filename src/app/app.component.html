@@ -10,7 +10,7 @@ EVERYBODY VACCINATED
 
 <p>VACCINATED</p>
 <div style="display: flex; flexDirection: row;">
-  <div *ngFor="let person of personasVacunadas.vacunados">
+  <div *ngFor="let person of vacArray">
     <app-personas [name]="person.name" [age]="person.age" [date]="person.date" [disease]="person.disease"
       [vaccineType]="person.vaccineType" [vaccined]="person.vaccined" [doses]="person.doses"
       (vacunar)="vacunar(person,'vacunados')">
@@ -23,7 +23,7 @@ EVERYBODY VACCINATED
 
 <p>NOT VACCINATED</p>
 <div style="display: flex; flexDirection: row;">
-  <div *ngFor="let person of personasVacunadas.noVacunados">
+  <div *ngFor="let person of  noVacArray">
     <app-personas [name]="person.name" [age]="person.age" [date]="person.date" [disease]="person.disease"
       [vaccineType]="person.vaccineType" [vaccined]="person.vaccined" [doses]="person.doses"
       (vacunar)="vacunar(person,'noVacunados')">
