@@ -10,8 +10,9 @@ import { Test1Service } from './services/test1.service';
   styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent implements OnInit {
 
+export class LoginComponent implements OnInit {
+  name1:string =  '';
    name = new FormControl('');
    formReactive: FormGroup;
 
@@ -103,8 +104,6 @@ export class LoginComponent implements OnInit {
    onShowAll(){
      console.log('DDDD:' , this.formReactive.value)
    }
-
-
 
 
 }
