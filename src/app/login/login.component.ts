@@ -20,11 +20,18 @@ export class LoginComponent implements OnInit {
     console.log(this.test1Service.getItems)
 
     this.formReactive = this.formBuilder.group({
-     name:'',
-     lastName:['',[Validators.required]],
-     date:''
+    // name:'',
+     //lastName:['',[Validators.required]],
+     //date:''
+     name:['',[Validators.required,Validators.minLength(3)]],
+     lastName:''
+
+
+
     });
     }
+
+
 
   ngOnInit():void {
 
@@ -42,6 +49,10 @@ export class LoginComponent implements OnInit {
      console.log('RESPONSE: ', res);
    });
 
+  }
+
+  getValue(value:string){
+    return this.formReactive.get(value);
   }
 
   setMessage():void{
@@ -92,4 +103,8 @@ export class LoginComponent implements OnInit {
    onShowAll(){
      console.log('DDDD:' , this.formReactive.value)
    }
+
+
+
+
 }

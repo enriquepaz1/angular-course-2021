@@ -62,3 +62,35 @@
 
 </div>
 <button (click)= "onShowAll()">SHOW ALL</button>
+
+<div [formGroup]="formReactive">
+  <label for="name">name</label>
+  <input type="text" formControlName="name">
+  <label>lastName</label>
+  <input type="text" formControlName="lastName">
+
+</div>
+
+<div *ngIf="getValue('name')?.invalid && (getValue('name').touched || getValue('name')?.dirty)">
+  error
+</div>
+
+<div *ngIf="getValue('name')?.errors.minlength">el tamano minimo es 3</div>
+<div>
+
+
+  <div> *ngIf="getValue('lasName')?.invalid && (getValue('lastName').touched || getValue('lastName')?.dirty)">
+  error
+</div>
+
+<div *ngIf="getValue('lastName')?.errors.minlength">el tamano minimo es 3</div>
+
+
+
+
+
+
+</div>
+
+
+
