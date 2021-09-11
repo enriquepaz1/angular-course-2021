@@ -31,7 +31,6 @@ const routes:Routes=[
     MatCardModule,
     MatIconModule,
     MatButtonModule,
-    HttpClientModule,
     MatDialogModule
 
   ],

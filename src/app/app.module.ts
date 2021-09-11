@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, BrowserTransferStateModule, ɵBROWSER_SANITIZATION_PROVIDERS } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { ImpurePipe } from './pipes/impure.pipe';
-import { PurePipe } from './pipes/pure.pipe';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './login/services/auth.service';
@@ -26,9 +24,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ImpurePipe,
-    PurePipe
+    AppComponent
   ],
   imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule,RouterModule.forRoot(routes)
   ],

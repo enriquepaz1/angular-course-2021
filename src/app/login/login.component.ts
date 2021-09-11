@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { AuthService } from './services/auth.service';
 import {MatDialog} from "@angular/material/dialog"
 import { RegisterComponent } from './components/register/register.component';
@@ -21,12 +20,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   login(form: any){
-console.log('AAAAA',form.value);
+  console.log('AAAAA',form.value);
 
   this.authService.login({
-     email:form.value.email,
-     password:form.value.password,
+     email: form.value.email,
+     password: form.value.password,
      returnSecureToken: true
 
   }).subscribe(res=>{
