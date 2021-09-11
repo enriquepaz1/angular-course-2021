@@ -1,7 +1,0 @@
-.ng-valid [required]{
-  border:5px solid green;
-}
-
-.ng-invalid.ng-touched [required]{
-  border:5px solid red;
-}

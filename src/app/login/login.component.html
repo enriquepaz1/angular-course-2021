@@ -1,114 +1,44 @@
-<p>login works!</p>
+<div class="container row">
 
-<button class="btn btn-danger">
-  asasdas
-</button>
+  <div class="left col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+    <img src="assets/img/logo.svg" alt="">
+    <p>
+      Connect with friends and the world around you on Facebook.
+    </p>
+  </div>
 
-<div class="btn-group btn-group-toggle">
-  <label class="btn-primary" ngbButtonLabel>
-    <input type="checkbox" ngbButton> Left (pre-checked)
-  </label>
-  <label class="btn-primary" ngbButtonLabel>
-    <input type="checkbox" ngbButton > Middle
-  </label>
-  <label class="btn-primary" ngbButtonLabel>
-    <input type="checkbox" ngbButton> Right
-  </label>
-</div>
+  <div class="right col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
 
+    <mat-card class="form">
+      <mat-card-content style="display:flex; justify-content: center; align-items: center; flex-direction: column;">
 
-<ngb-toast [autohide]="false">
-  I am a simple static toast.
-</ngb-toast>
+        <form #form= "ngForm" (ngSubmit)= "login(form)" style="display: flex; flex-direction: column;">
+          <input type="text"
+          name="email"
+          ngModel
+          placeholder="Email address">
+          <input type="password"
+          name="password"
+          ngModel
+          placeholder="Password">
+          <button class="login-btn">Log In</button>
+          <a href="">Forgot Password?</a>
 
+          </form>
+          <div class="underline"></div>
+        <button class="create-new-account-btn"
 
-<mat-spinner [diameter]="30" [color]="'accent'"></mat-spinner>
-<mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+        (click)= "onCreateNewAccount()"
+        >Create New Account</button>
+      </mat-card-content>
+    </mat-card>
 
-<hr>
+    <p><a href="">Create a Page</a> for celebrity, band or business.</p>
 
-<button (click)= "setMessage()">set message</button>
- <button routerLink="../pages">pages</button>
-
-
-<button (click)= "create()">crear</button>
-<button (click)= "delete()">eliminar</button>
-<button (click)= "update()">actualizar</button>
-<button (click)= "patch()">patch</button>
-
-<app-login1></app-login1>
-<app-login2></app-login2>
-
-
-
-<p>TEMPLATE FORM</p>
-<form #formTemplate="ngForm" (ngSubmit)= "onSubmitTemplate(formTemplate)">
-  <input type="text" name="aa" ngModel>
-  <input type="text" name="bb" ngModel>
-  <input type="text" name="cc" ngModel>
-  <button type="submit">submit</button>
-</form>
-
-<p>-----REACTIVE FORMS------</p>
-
-<input type="text" [formControl]= "name">
-<button (click)= "onShow">SHOW</button>
-
-<div [formGroup]="formReactive">
-
-  <input type="text" formControlName="name">
-  <input type="text" formControlName="lastName">
-  <input type="text" formControlName="date">
-
-</div>
-<button (click)= "onShowAll()">SHOW ALL</button>
-
-<div [formGroup]="formReactive">
-  <label for="name">name</label>
-  <input type="text" formControlName="name">
-  <label>lastName</label>
-  <input type="text" formControlName="lastName">
+  </div>
 
 </div>
 
-<div *ngIf="getValue('name')?.invalid && (getValue('name').touched || getValue('name')?.dirty)">
-  error
-</div>
-
-<div *ngIf="getValue('name')?.errors.minlength">el tamano minimo es 3</div>
-<div>
-
-
-  <div> *ngIf="getValue('lasName')?.invalid && (getValue('lastName').touched || getValue('lastName')?.dirty)">
-  error
-</div>
-
-<div *ngIf="getValue('lastName')?.errors.minlength">el tamano minimo es 3</div>
-
-
-<input type ="text"
-  required
-  minlength="5"
-  maxlength="10"
-   [ngModel]="name1"
-  #nameLocal="ngModel">
-
-
-  <div>{{nameLocal.errors | json }</div>
-
-  <div *ngIf="nameLocal.valid"> ES VALIDO</div>
- <div *ngIf ="nameLocal.invalid && (nameLocal.touched || nameLocal.dirty)" >
-
- <div *ngIf="nameLocal.errors?.required">name is requisito</div>
-
- <div *ngIf="nameLocal.errors?.minlength">name is requisito</div>
-
- <div *ngIf="nameLocal.errors?.maxlength">name is requisito</div>
-
-
-
-
- </div>
 
 
 
@@ -128,18 +58,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-</div>
 
 
 
