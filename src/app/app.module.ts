@@ -10,7 +10,9 @@ import { View1sub2Component } from './view1/view1sub2/view1sub2.component';
 import { View2Component } from './view2/view2.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { View3sub2Component } from './view3/view3sub2/view3sub2.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthService } from './login/services/auth.service';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 const routes: Routes = [
 {path:'',redirectTo:'login', pathMatch:'full'},
@@ -24,45 +26,6 @@ const routes: Routes = [
 }
 
 
-/*
-  {
-    path: '',
-    redirectTo: 'view1',
-    pathMatch: 'full'
-  },
-
-
-  {
-    path: 'view1',
-    component: View1Component,
-    children: [
-      {
-        path: '',
-        redirectTo: 'view1sub1',
-        pathMatch: 'full'
-      },
-      {
-        path: 'view1sub1',
-        component: View1sub1Component
-      },
-      {
-        path: 'view1sub2',
-        component: View1sub2Component
-      }
-    ]
-  },
-
-  {
-    path: 'view2/:id/sub/:id2',
-    component: View2Component
-  },
-
-  {
-    path: 'view3',
-    loadChildren: () => import('./view3/view3.module').then(m => m.View3Module)
-  }
-
-*/
 
 ];
 
@@ -78,7 +41,13 @@ const routes: Routes = [
   ],
   imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule,RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
