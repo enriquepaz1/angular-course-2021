@@ -1,19 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { SingletonService } from 'src/app/login/services/singleton.service';
+import { PublicationService } from 'src/app/login/services/publication.service';
 
 @Component({
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private singletonService:SingletonService) { }
+  constructor(private publicationService: PublicationService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+
+    this.publicationService.getAll().subscribe(res => {
+
+      console.log('RES PUBLICATIONS', res);
+
+    })
+
   }
 
   onShowMessage():void{
-   console.log(this.singletonService.getMessage());
   }
 
 }
