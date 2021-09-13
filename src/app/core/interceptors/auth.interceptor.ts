@@ -23,11 +23,11 @@ export class AuthInterceptor implements HttpInterceptor {
 
       let params = new HttpParams();
       params =params.append('auth', token);
-       request=request.clone({
+       request= request.clone({
          url: `${request.url}`,
          params
        });
-
+      }
       //let params = new HttpParams();
       //params.append('auth', 'asdasdasdas')
       //params.append('dgdfg', 'asdasdasdas')
@@ -35,7 +35,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
       //console.log('PARAMS', params)
 
-    }
+
     return next.handle(request).pipe(
       catchError( (err:any) => {
         console.log('ERROR', err)

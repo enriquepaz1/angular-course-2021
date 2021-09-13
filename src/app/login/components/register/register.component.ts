@@ -15,15 +15,11 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
   onRegister(form:any){
-
-
-
   this.authService.signUp({
-    email:form.value.email,
-    password:form.value.password,
+    email: form.value.email,
+    password: form.value.password,
     returnSecureToken: true
-  }).subscribe(res=>{
-
+    }).subscribe(()=>{
     this.dialogRef.close();
   })
 

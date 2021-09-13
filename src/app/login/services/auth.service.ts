@@ -14,20 +14,18 @@ export class AuthService {
 
 
   public login(body:any):Observable<any>{
-  return this.http.post(`${this.url}v1/accounts:signInWithPassword?key=${this.key}` , body). pipe(
+  return this.http.post(`${this.url}/v1/accounts:signInWithPassword?key=${this.key}` , body). pipe(
     map( (res:any)=>{
-        this.authSucces(res.idToken, res.localId)
+        this.authSuccess(res.idToken, res.localId)
         return res;
     })
     );
   }
-
-
   public signUp(body:any){
     return this.http.post(`${this.url}/v1/accounts:signUp?key=${this.key}`, body)
   }
 
- private authSucces(token:string,userId:string){
+ private authSuccess(token:string, userId:string){
  localStorage.setItem('token',token);
  localStorage.setItem('userId',userId);
 }

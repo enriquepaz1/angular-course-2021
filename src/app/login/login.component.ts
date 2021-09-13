@@ -12,25 +12,20 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-
   constructor(private authService:AuthService, private matDialog:MatDialog, private router:Router) {
-
-
   }
 
   ngOnInit(): void {
   }
 
   login(form: any){
-  console.log('AAAAA',form.value);
-
-  this.authService.login({
+     this.authService.login({
      email: form.value.email,
      password: form.value.password,
      returnSecureToken: true
 
-  }).subscribe(res=>{
-    console.log('RESPONSE',res);
+    }).subscribe(res=>{
+    console.log('RESPONSE', res);
     this.router.navigate(['pages']);
   });
 
@@ -39,6 +34,5 @@ export class LoginComponent implements OnInit {
   onCreateNewAccount(){
     this.matDialog.open(RegisterComponent)
   }
-
 
 }

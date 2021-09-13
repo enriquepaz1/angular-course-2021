@@ -28,7 +28,8 @@ const routes: Routes = [
   ],
   imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule,RouterModule.forRoot(routes)
   ],
-  providers: [AuthService,
+  providers: [
+    AuthService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
