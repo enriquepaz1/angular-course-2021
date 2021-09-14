@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   app:{
    apiBaseUrl: "https://facebook-angular-enrique-default-rtdb.firebaseio.com"
   },

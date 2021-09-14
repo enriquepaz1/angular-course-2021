@@ -18,7 +18,7 @@ export class AuthService {
     map( (res:any)=>{
         this.authSuccess(res.idToken, res.localId)
         return res;
-    })
+      })
     );
   }
   public signUp(body:any){
@@ -28,10 +28,10 @@ export class AuthService {
  private authSuccess(token:string, userId:string){
  localStorage.setItem('token',token);
  localStorage.setItem('userId',userId);
-}
+  }
 public getToken(): string | null{
  return localStorage.getItem('token');
-}
+  }
  public getUserId():string | null{
   return localStorage.getItem('userId');
  }
