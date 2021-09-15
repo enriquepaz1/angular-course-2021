@@ -15,7 +15,7 @@ import { Component, Input, OnInit } from '@angular/core';
       <p>Vaccined:{{ vaccined ? 'Yes' : 'No' }}</p>
       <p>Doses:{{ doses }}</p>
 
-      <button *ngIf="!vaccined" (click)="onVacunar()" [disabled]="age < 18">
+      <button *ngIf="!vaccined" (click)="onVacunar()" [disabled]="age < 18 || disease" >
         Vacunar
       </button>
     </div>
