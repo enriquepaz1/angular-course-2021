@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import {map} from "rxjs/operators";
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
@@ -10,7 +11,7 @@ export class AuthService {
   url = environment.auth.apiBaseUrl;
   key= environment.auth.key;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router:Router) { }
 
 
   public login(body:any):Observable<any>{
@@ -35,5 +36,21 @@ public getToken(): string | null{
  public getUserId():string | null{
   return localStorage.getItem('userId');
  }
+
+ public verifyLogged(): boolean {
+  const token = localStorage.getItem('token');
+  // token ? true : false
+  return !!token;
+}
+
+public logout(): void {
+  localStorage.removeItem('token');
+  localStorage.removeItem('userId');
+  this.router.navigate(['login'])
+}
+
+
+
+
 
 }
