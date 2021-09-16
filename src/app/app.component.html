@@ -1,1 +1,26 @@
 <p>Start editing to see some magic happen :)</p>
+
+<div>TOTAL BTC: {{ TotalCoin('btc') }} TOTAL ETH: {{ TotalCoin('eth') }}</div>
+
+<div *ngIf="TransactionActualizado()">THERE ARE NOT TRANSACTIONS</div>
+
+<p>WALLETS</p>
+<div style="display: flex; flex-direction: row">
+  <div *ngFor="let wallet of wallets">
+    <app-billetera [data]="wallet"> </app-billetera>
+  </div>
+</div>
+
+<p>TRANSACTIONS</p>
+
+<div style="display: flex; flex-direction: row;">
+  <div *ngFor="let transaction of transactions">
+    <app-transaccion [data]="transaction">
+      <button
+        [disabled]="transaction.mineType === 'PoS' && transaction.miner < 20"
+        (click)="Minar(transaction)"
+      >Minar
+      </button>
+    </app-transaccion>
+  </div>
+</div>
