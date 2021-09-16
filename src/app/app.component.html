@@ -19,8 +19,39 @@
       <button
         [disabled]="transaction.mineType === 'PoS' && transaction.miner < 5"
         (click)="Minar(transaction)"
-      >Minar
+      >
+        Minar
       </button>
     </app-transaccion>
   </div>
+</div>
+
+<div [formGroup]="formReactive">
+  <p>
+    From: <br />
+    <input type="text" formControlName="from" />
+  </p>
+  <p>
+    To: <br />
+    <input type="text" formControlName="to" />
+  </p>
+
+  <p>
+    Quantity: <br />
+    <input type="text" formControlName="quantity" />
+  </p>
+
+  <p>
+    Money Type: <br />
+    <input type="text" formControlName="MoneyType" />
+  </p>
+
+  <p>
+    Type Mine: <br />
+    <input type="text" formControlName="TypeMine" />
+  </p>
+  <p>
+    Miner: <br />
+    <input type="text" formControlName="Miner" />
+  </p>
 </div>

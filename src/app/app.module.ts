@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -15,7 +16,7 @@ import { TransaccionComponent } from './transaccion/transaccion.component';
     TransaccionComponent
   ],
   imports: [
-    BrowserModule,HttpClientModule
+    BrowserModule,HttpClientModule,ReactiveFormsModule
   ],
   providers: [TransaccionService,BilleteraService],
 

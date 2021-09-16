@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { BilleteraService } from './billetera.service';
 import { TransaccionService } from './transaccion.service';
 
@@ -12,17 +13,37 @@ export class AppComponent implements OnInit {
   wallets: any[] = [];
   transactions: any[] = [];
 
+  formReactive: FormGroup;
+
   constructor(
+    private formBuilder: FormBuilder,
     private transaccionService: TransaccionService,
     private billeteraService: BilleteraService
-  ) {}
+  ) {
+    this.formReactive = this.formBuilder.group({
+      from: '',
+      to: '',
+      quantity: '',
+      MoneyType: '',
+      TypeMine: '',
+      Miner: '',
+    });
+
+    this.formReactive.valueChanges.subscribe((res) => {
+      console.log('sss', res);
+    });
+  }
 
   ngOnInit() {
     this.getTransaccion();
     this.getWallets();
   }
 
-  onMine(transaction: any): void {
+  onShowAll(){
+    console.log('DDD', this.formReactive.value)
+  }
+
+  Minar(transaction: any): void {
     const walletFROM = this.wallets.find((w) => w.wallet === transaction.from);
     const walletTO = this.wallets.find((w) => w.wallet === transaction.to);
 
