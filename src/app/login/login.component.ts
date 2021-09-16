@@ -16,6 +16,9 @@ import { Router } from '@angular/router';
   }
 
   ngOnInit(): void {
+    if(this.authService.verifyLogged()){
+      this.router.navigate(['pages']);
+    }
   }
 
   login(form: any){
