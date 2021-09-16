@@ -17,7 +17,7 @@
   <div *ngFor="let transaction of transactions">
     <app-transaccion [data]="transaction">
       <button
-        [disabled]="transaction.mineType === 'PoS' && transaction.miner < 20"
+        [disabled]="transaction.mineType === 'PoS' && transaction.miner < 5"
         (click)="Minar(transaction)"
       >Minar
       </button>
