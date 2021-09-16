@@ -28,10 +28,6 @@ export class AppComponent implements OnInit {
       TypeMine: '',
       Miner: '',
     });
-
-    this.formReactive.valueChanges.subscribe((res) => {
-      console.log('sss', res);
-    });
   }
 
   ngOnInit() {
@@ -39,8 +35,8 @@ export class AppComponent implements OnInit {
     this.getWallets();
   }
 
-  onShowAll(){
-    console.log('DDD', this.formReactive.value)
+  onShowAll() {
+    console.log('DDD', this.formReactive.value);
   }
 
   Minar(transaction: any): void {
