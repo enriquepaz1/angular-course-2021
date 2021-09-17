@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BilleteraService } from './billetera.service';
 import { BilleteraComponent } from './billetera/billetera.component';
+import { EditarService } from './editar.service';
 import { TransaccionService } from './transaccion.service';
 import { TransaccionComponent } from './transaccion/transaccion.component';
 
@@ -18,7 +19,7 @@ import { TransaccionComponent } from './transaccion/transaccion.component';
   imports: [
     BrowserModule,HttpClientModule,ReactiveFormsModule
   ],
-  providers: [TransaccionService,BilleteraService],
+  providers: [TransaccionService,BilleteraService,EditarService],
 
   bootstrap: [AppComponent]
 })

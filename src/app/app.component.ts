@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgModel } from '@angular/forms';
 import { BilleteraService } from './billetera.service';
+import { EditarService } from './editar.service';
 import { TransaccionService } from './transaccion.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class AppComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private transaccionService: TransaccionService,
-    private billeteraService: BilleteraService
+    private billeteraService: BilleteraService, 
+    private editarService:EditarService
   ) {
     this.formReactive = this.formBuilder.group({
       from: '',
@@ -36,9 +38,15 @@ export class AppComponent implements OnInit {
   }
 
   onShowAll() {
-    this.transaccionService.create().subscribe((result)=>{console.log(this.formReactive.value)})
+    this.transaccionService.create(this.formReactive.value).subscribe((result)=>{console.log(this.formReactive.value)})
     console.log('DDD', this.formReactive.value);
   }
+
+  Editar(edittrans:any){
+    this.editarService.setMode("Edit")
+    this.editarService.setInfo(edittrans)
+  }
+
 
   Minar(transaction: any): void {
     const billDe = this.wallets.find((m) => m.wallet === transaction.from);
