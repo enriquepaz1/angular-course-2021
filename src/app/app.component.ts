@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, NgModel } from '@angular/forms';
 import { BilleteraService } from './billetera.service';
 import { TransaccionService } from './transaccion.service';
 
@@ -36,26 +36,27 @@ export class AppComponent implements OnInit {
   }
 
   onShowAll() {
+    this.transaccionService.create().subscribe((result)=>{console.log(this.formReactive.value)})
     console.log('DDD', this.formReactive.value);
   }
 
   Minar(transaction: any): void {
-    const walletFROM = this.wallets.find((w) => w.wallet === transaction.from);
-    const walletTO = this.wallets.find((w) => w.wallet === transaction.to);
+    const billDe = this.wallets.find((m) => m.wallet === transaction.from);
+    const bill = this.wallets.find((m) => m.wallet === transaction.to);
 
-    walletFROM[transaction.moneyType] =
-      walletFROM[transaction.moneyType] - transaction.quantity;
-    walletTO[transaction.moneyType] =
-      walletTO[transaction.moneyType] + transaction.quantity;
+    billDe[transaction.moneyType] =
+    billDe[transaction.moneyType] - transaction.quantity;
+    bill[transaction.moneyType] =
+    bill[transaction.moneyType] + transaction.quantity;
 
     this.transaccionService
       .delete(transaction.id)
       .subscribe(() => this.getTransaccion());
     this.billeteraService
-      .update(walletFROM.id, walletFROM)
+      .update(billDe.id, billDe)
       .subscribe((res) => this.getWallets());
     this.billeteraService
-      .update(walletTO.id, walletTO)
+      .update(bill.id, bill)
       .subscribe((res) => this.getWallets());
   }
 
